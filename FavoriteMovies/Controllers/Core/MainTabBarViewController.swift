@@ -26,7 +26,7 @@ class MainTabBarViewController: UITabBarController {
         vcHome.tabBarItem.image = UIImage(systemName: "house.circle")
         vcUpcoming.tabBarItem.image = UIImage(systemName: "play.circle")
         vcSearch.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle")
-        vcWatchList.tabBarItem.image = UIImage(systemName: " hand.thumbsup.circle.fill")
+        vcWatchList.tabBarItem.image = UIImage(systemName: "hand.thumbsup.circle.fill")
         setViewControllers([
             vcHome ,
             vcUpcoming ,
