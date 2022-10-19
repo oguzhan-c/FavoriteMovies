@@ -8,8 +8,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    private var headerView: HomePosterUIView?
-
     private let homeTable : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollecitonViewTableViewCell.self, forCellReuseIdentifier: CollecitonViewTableViewCell.identifier)
@@ -41,17 +39,23 @@ class HomeViewController: UIViewController {
         homeTable.delegate = self
         homeTable.dataSource = self
         
-        headerView = HomePosterUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 400))
+        let headerView = HomePosterUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeTable.tableHeaderView = headerView
-                
     }
-
+    
+    //MARK: -configure Nav bar
+    private func configureNavBar(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil)
+    }
+    
+    //MARK: -fetch data from home table
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeTable.frame = view.bounds
     }
 }
 
+//MARK: -UITableViewDataSource/UITableViewDelegate
 extension HomeViewController : UITableViewDataSource , UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,13 +65,64 @@ extension HomeViewController : UITableViewDataSource , UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollecitonViewTableViewCell.identifier) as? CollecitonViewTableViewCell else{
                 return UITableViewCell()
         }
+        
+        switch indexPath.section{
+        case Sections.getTrendingMovie.rawValue :
+            APIHelper.shared.getTrendingMovies { results in
+                switch results{
+                case .success(let movies) :
+                    cell.configure(with: movies)
+                case .failure(let error) :
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.getTrendingTv.rawValue :
+            APIHelper.shared.getTrendingTv { results in
+                switch results {
+                case .success(let trendingTvs) :
+                    cell.configure(with: trendingTvs)
+                case .failure(let error) :
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.getPopular.rawValue :
+            APIHelper.shared.getPopular { results in
+                switch results {
+                case .success(let populer) :
+                    cell.configure(with: populer)
+                case .failure(let error) :
+                    print(error.localizedDescription)
+                }
+                
+            }
+        case Sections.getUpcomingMovie.rawValue :
+            APIHelper.shared.getUpcomingMovies { results in
+                switch results{
+                case .success(let upcoming) :
+                    cell.configure(with: upcoming)
+                case .failure(let error) :
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.getTopRated.rawValue :
+            APIHelper.shared.getTopRateds { results in
+                switch results {
+                case .success(let topRateds) :
+                    cell.configure(with: topRateds)
+                case .failure(let error) :
+                    print(error.localizedDescription)
+                }
+            }
+        default:
+            UITableViewCell()
+        }
+        
         return cell
     }
     
