@@ -8,12 +8,12 @@
 import UIKit
 
 protocol CollectionViewTableViewCellDelegate: AnyObject {
-    func collectionViewTableViewCellDidTapCell(_ cell: CollecitonViewTableViewCell, viewModel: TitlePreviewViewModel)
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel)
 }
 
 
 // it's handling all section.This is the base section handler
-class CollecitonViewTableViewCell: UITableViewCell {
+class CollectionViewTableViewCell: UITableViewCell {
 
     weak var delegate: CollectionViewTableViewCellDelegate?
 
@@ -55,21 +55,9 @@ class CollecitonViewTableViewCell: UITableViewCell {
             self?.collectionView.reloadData()
         }
     }
-    
-//    private func downloadTitleAt(indexPath : IndexPath){
-//        RealmDatabaseManager.shared.dowmnloadTitleWith(model: titles[indexPath.row]) { result in
-//            switch result{
-//            case .success() :
-//                print("downloaded To Database")
-//            case.failure(let error) :
-//                print(error.localizedDescription)
-//            }
-//
-//        }
-//    }
 }
 
-extension CollecitonViewTableViewCell : UICollectionViewDelegate , UICollectionViewDataSource{
+extension CollectionViewTableViewCell : UICollectionViewDelegate , UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell
@@ -81,7 +69,7 @@ extension CollecitonViewTableViewCell : UICollectionViewDelegate , UICollectionV
             return UICollectionViewCell()
         }
         cell.configure(with: model)
-        print(model)
+        
         return cell
     }
     
@@ -93,9 +81,8 @@ extension CollecitonViewTableViewCell : UICollectionViewDelegate , UICollectionV
         collectionView.deselectItem(at: indexPath, animated: true)
         let item = titles[indexPath.row]
         guard let titleName = item.original_title else{return}
-        
-        APIHelper.shared.getyoutubeMovie(with: titleName) { result in
-            switch result{
+        APIHelper.shared.getYoutubeVideo(with: titleName) { result in
+            switch result {
             case .success(let video) :
                 let videoModel = TitlePreviewViewModel(title: titleName, youtubeVideo: video, titleOverView: item.overview ?? "Unknown")
                 self.delegate?.collectionViewTableViewCellDidTapCell(self, viewModel: videoModel)
@@ -103,15 +90,6 @@ extension CollecitonViewTableViewCell : UICollectionViewDelegate , UICollectionV
                 print(error.localizedDescription)
             }
         }
+        
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-//        let config = UIContextMenuConfiguration(identifier: nil , previewProvider: nil){_ in
-//            let downloadAction  = UIAction(title: "Download") { _ in
-//                self.downloadTitleAt(indexPath: indexPath)
-//            }
-//            return UIMenu(title: "" ,image: nil , identifier: nil , options: .displayInline , children: [downloadAction])
-//        }
-//            return config
-//    }
 }

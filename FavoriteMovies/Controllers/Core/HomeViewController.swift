@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     private let homeTable : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
-        table.register(CollecitonViewTableViewCell.self, forCellReuseIdentifier: CollecitonViewTableViewCell.identifier)
+        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
     }()
 
@@ -68,7 +68,7 @@ extension HomeViewController : UITableViewDataSource , UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollecitonViewTableViewCell.identifier) as? CollecitonViewTableViewCell else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier) as? CollectionViewTableViewCell else{
                 return UITableViewCell()
         }
         
@@ -142,12 +142,5 @@ extension HomeViewController : UITableViewDataSource , UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitles[section]
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let defaultOffSet = view.safeAreaInsets.top //Off Set for top
-        let offSet = scrollView.contentOffset.y + defaultOffSet
-        
-        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offSet))
     }
 }

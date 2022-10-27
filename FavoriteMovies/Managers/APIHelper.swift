@@ -105,7 +105,7 @@ class APIHelper{
         task.resume()
     }
     
-    func getdDiscoverMovies(completion : @escaping (Result<[Title] , Error>) -> Void){
+    func getDiscoverMovies(completion : @escaping (Result<[Title] , Error>) -> Void){
         guard let url = URL(string: "\(Constants.baseURL)/3/discover/movie?api_key=\(Constants.keyTMDB)")
         else{return}
         
@@ -141,8 +141,8 @@ class APIHelper{
         }
         task.resume()
     }
-    
-    func getyoutubeMovie(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
+     
+    func getYoutubeVideo(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
           guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
           guard let url = URL(string: "\(Constants.youtubeBaseURL)q=\(query)&key=\(Constants.keyYoutube)") else {return}
           let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
