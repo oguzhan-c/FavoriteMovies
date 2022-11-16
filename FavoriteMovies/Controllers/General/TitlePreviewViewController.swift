@@ -14,13 +14,15 @@ class TitlePreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+    
         view.backgroundColor = .systemBackground
         view.addSubview(webView)
         view.addSubview(titleLabel)
         view.addSubview(overviewLabel)
-        view.addSubview(downloadButton)
+        view.addSubview(comment)
+        view.addSubview(commentButton)
         configureConstraints()
+        
         
         
     }
@@ -43,13 +45,21 @@ class TitlePreviewViewController: UIViewController {
         label.text = "This is the best movie ever to watch as a kid!"
         return label
     }()
+        
+    private let comment: UITextField = {
+        let textField = UITextField()
+        textField.font = .systemFont(ofSize: 18 , weight: .regular)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = .label
+        return textField
+    }()
     
-    private let downloadButton: UIButton = {
+    private let commentButton: UIButton = {
        
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .red
-        button.setTitle("Download", for: .normal)
+        button.setTitle("send", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
@@ -84,17 +94,24 @@ class TitlePreviewViewController: UIViewController {
             overviewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         
-        let downloadButtonConstraints = [
-            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 25),
-            downloadButton.widthAnchor.constraint(equalToConstant: 140),
-            downloadButton.heightAnchor.constraint(equalToConstant: 40)
+        let commentConstraints = [
+            comment.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor , constant: 30) ,
+            comment.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 30) ,
+            comment.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ]
+        
+        let commentButtonConstraints = [
+            commentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            commentButton.topAnchor.constraint(equalTo: comment.bottomAnchor, constant: 25),
+            commentButton.widthAnchor.constraint(equalToConstant: 140),
+            commentButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(overviewLabelConstraints)
-        NSLayoutConstraint.activate(downloadButtonConstraints)
+        NSLayoutConstraint.activate(commentConstraints)
+        NSLayoutConstraint.activate(commentButtonConstraints)
         
     }
     

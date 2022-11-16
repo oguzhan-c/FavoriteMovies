@@ -37,7 +37,7 @@ class TitleTableViewCell: UITableViewCell {
         button.setImage( image , for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .systemPink
-        print("button pressed : Search")
+//        print("button pressed : Search")
         return button
     }()
     

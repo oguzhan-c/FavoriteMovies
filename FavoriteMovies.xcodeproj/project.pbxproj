@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5FD86F905148E44126CDE182 /* Pods_FavoriteMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58933F901F72E2026002447A /* Pods_FavoriteMovies.framework */; };
+		D30B40F729110B1100B02CA7 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B40F629110B1100B02CA7 /* EntryViewController.swift */; };
+		D390E5A42924C68F00C4E71F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390E5A32924C68F00C4E71F /* LoginViewController.swift */; };
+		D390E5A62924C81F00C4E71F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390E5A52924C81F00C4E71F /* RegisterViewController.swift */; };
 		D3957C5D28F56FC10034283E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3957C5C28F56FC10034283E /* AppDelegate.swift */; };
 		D3957C5F28F56FC10034283E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3957C5E28F56FC10034283E /* SceneDelegate.swift */; };
 		D3957C6628F56FC10034283E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3957C6528F56FC10034283E /* Assets.xcassets */; };
@@ -24,6 +27,8 @@
 		D3C20A63290ABAA3001128AC /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C20A62290ABAA3001128AC /* TitlePreviewViewController.swift */; };
 		D3C20A65290ABAD3001128AC /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C20A64290ABAD3001128AC /* SearchResultsViewController.swift */; };
 		D3CA3C7528FF61F20085B68E /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA3C7428FF61F20085B68E /* TitlePreviewViewModel.swift */; };
+		D3CB9FC62917BC7400F0F459 /* RealmDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FC52917BC7400F0F459 /* RealmDatabaseManager.swift */; };
+		D3D26D4529152688002FF6E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D26D4429152688002FF6E3 /* User.swift */; };
 		D3EE4B2928FBF321001A3401 /* Tiitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE4B2828FBF321001A3401 /* Tiitles.swift */; };
 		D3EF940028FAE1E400A75FFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF93FF28FAE1E400A75FFB /* Constants.swift */; };
 		D3EF940228FAE2A000A75FFB /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF940128FAE2A000A75FFB /* APIHelper.swift */; };
@@ -35,6 +40,9 @@
 		4F56F49A79565B5550AFB7B8 /* Pods-FavoriteMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteMovies.debug.xcconfig"; path = "Target Support Files/Pods-FavoriteMovies/Pods-FavoriteMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		58933F901F72E2026002447A /* Pods_FavoriteMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoriteMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		814F9818DE5F950D7AF2E275 /* Pods-FavoriteMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteMovies.release.xcconfig"; path = "Target Support Files/Pods-FavoriteMovies/Pods-FavoriteMovies.release.xcconfig"; sourceTree = "<group>"; };
+		D30B40F629110B1100B02CA7 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		D390E5A32924C68F00C4E71F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D390E5A52924C81F00C4E71F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D3957C5928F56FC10034283E /* FavoriteMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3957C5C28F56FC10034283E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3957C5E28F56FC10034283E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,8 @@
 		D3C20A62290ABAA3001128AC /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
 		D3C20A64290ABAD3001128AC /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		D3CA3C7428FF61F20085B68E /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
+		D3CB9FC52917BC7400F0F459 /* RealmDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseManager.swift; sourceTree = "<group>"; };
+		D3D26D4429152688002FF6E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D3EE4B2828FBF321001A3401 /* Tiitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiitles.swift; sourceTree = "<group>"; };
 		D3EF93FF28FAE1E400A75FFB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D3EF940128FAE2A000A75FFB /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
@@ -136,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D3957C7028F570A90034283E /* MainTabBarViewController.swift */,
+				D30B40F629110B1100B02CA7 /* EntryViewController.swift */,
 				D3957C7428F571680034283E /* HomeViewController.swift */,
 				D3957C7628F571890034283E /* UpcomingViewController.swift */,
 				D3957C7828F571960034283E /* WatchListViewController.swift */,
@@ -149,6 +160,8 @@
 			children = (
 				D3C20A62290ABAA3001128AC /* TitlePreviewViewController.swift */,
 				D3C20A64290ABAD3001128AC /* SearchResultsViewController.swift */,
+				D390E5A32924C68F00C4E71F /* LoginViewController.swift */,
+				D390E5A52924C81F00C4E71F /* RegisterViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 			children = (
 				D3EE4B2828FBF321001A3401 /* Tiitles.swift */,
 				D3A281A128FC0CDB008E7BEB /* YoutubeSearchResults.swift */,
+				D3D26D4429152688002FF6E3 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +199,7 @@
 			children = (
 				D3EF93FF28FAE1E400A75FFB /* Constants.swift */,
 				D3EF940128FAE2A000A75FFB /* APIHelper.swift */,
+				D3CB9FC52917BC7400F0F459 /* RealmDatabaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -315,7 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F6726528FAD19A00EE1711 /* HomePosterUIView.swift in Sources */,
+				D30B40F729110B1100B02CA7 /* EntryViewController.swift in Sources */,
 				D3957C7128F570A90034283E /* MainTabBarViewController.swift in Sources */,
+				D390E5A62924C81F00C4E71F /* RegisterViewController.swift in Sources */,
 				D3A281A228FC0CDB008E7BEB /* YoutubeSearchResults.swift in Sources */,
 				D3CA3C7528FF61F20085B68E /* TitlePreviewViewModel.swift in Sources */,
 				D3EE4B2928FBF321001A3401 /* Tiitles.swift in Sources */,
@@ -324,12 +341,15 @@
 				D3957C5F28F56FC10034283E /* SceneDelegate.swift in Sources */,
 				D3C20A5E290AB9E1001128AC /* TitleTableViewCell.swift in Sources */,
 				D3C20A60290ABA1E001128AC /* TitleViewModel.swift in Sources */,
+				D390E5A42924C68F00C4E71F /* LoginViewController.swift in Sources */,
 				D39F2C0C28FF5CF5008F050B /* TitleCollectionViewCell.swift in Sources */,
 				D3EF940028FAE1E400A75FFB /* Constants.swift in Sources */,
 				D3957C7728F571890034283E /* UpcomingViewController.swift in Sources */,
 				D3957C7928F571960034283E /* WatchListViewController.swift in Sources */,
+				D3CB9FC62917BC7400F0F459 /* RealmDatabaseManager.swift in Sources */,
 				D3C20A63290ABAA3001128AC /* TitlePreviewViewController.swift in Sources */,
 				D3957C7528F571680034283E /* HomeViewController.swift in Sources */,
+				D3D26D4529152688002FF6E3 /* User.swift in Sources */,
 				D3EF940228FAE2A000A75FFB /* APIHelper.swift in Sources */,
 				D3C20A65290ABAD3001128AC /* SearchResultsViewController.swift in Sources */,
 				D3F6726328FAC79900EE1711 /* CollecitonViewTableViewCell.swift in Sources */,

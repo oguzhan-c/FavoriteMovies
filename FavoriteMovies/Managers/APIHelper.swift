@@ -23,7 +23,6 @@ class APIHelper{
             do{
                 let results = try JSONDecoder().decode(TitleResponse.self, from: data)
                 completion(.success(results.results))
-    
             }
             catch{
                 completion(.failure(APIError.failedToGetData))

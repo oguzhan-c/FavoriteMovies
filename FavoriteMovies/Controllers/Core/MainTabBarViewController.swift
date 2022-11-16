@@ -9,20 +9,31 @@ import UIKit
 
 class MainTabBarViewController: UITabBarController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemRed
         
-        configureViews()
+//        configureEntryViews()
+        configureEntry()
     }
+    
+    private func configureEntryViews(){
+        if EntryViewController.isAuthenticated == false{
+            configureEntry()
+        }
+        else{
+            configureViews()
+        }
+    }
+    
     
     private func configureViews(){
         let vcHome = UINavigationController(rootViewController: HomeViewController())
         let vcUpcoming = UINavigationController(rootViewController: UpcomingViewController())
         let vcSearch = UINavigationController(rootViewController: SearchViewController())
         let vcWatchList = UINavigationController(rootViewController: WatchListViewController())
-       
         vcHome.tabBarItem.image = UIImage(systemName: "house.circle")
         vcUpcoming.tabBarItem.image = UIImage(systemName: "play.circle")
         vcSearch.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle")
@@ -41,5 +52,10 @@ class MainTabBarViewController: UITabBarController {
         
         tabBar.tintColor = .label
     }
-
+    
+    private func configureEntry(){
+        let vcEntry = UINavigationController(rootViewController: EntryViewController())
+        
+        setViewControllers([vcEntry] , animated: true)
+    }
 }
