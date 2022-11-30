@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5FD86F905148E44126CDE182 /* Pods_FavoriteMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58933F901F72E2026002447A /* Pods_FavoriteMovies.framework */; };
-		D30B40F729110B1100B02CA7 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B40F629110B1100B02CA7 /* EntryViewController.swift */; };
 		D390E5A42924C68F00C4E71F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390E5A32924C68F00C4E71F /* LoginViewController.swift */; };
 		D390E5A62924C81F00C4E71F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390E5A52924C81F00C4E71F /* RegisterViewController.swift */; };
 		D3957C5D28F56FC10034283E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3957C5C28F56FC10034283E /* AppDelegate.swift */; };
@@ -40,7 +39,6 @@
 		4F56F49A79565B5550AFB7B8 /* Pods-FavoriteMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteMovies.debug.xcconfig"; path = "Target Support Files/Pods-FavoriteMovies/Pods-FavoriteMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		58933F901F72E2026002447A /* Pods_FavoriteMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoriteMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		814F9818DE5F950D7AF2E275 /* Pods-FavoriteMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteMovies.release.xcconfig"; path = "Target Support Files/Pods-FavoriteMovies/Pods-FavoriteMovies.release.xcconfig"; sourceTree = "<group>"; };
-		D30B40F629110B1100B02CA7 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		D390E5A32924C68F00C4E71F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D390E5A52924C81F00C4E71F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D3957C5928F56FC10034283E /* FavoriteMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				D3957C7028F570A90034283E /* MainTabBarViewController.swift */,
-				D30B40F629110B1100B02CA7 /* EntryViewController.swift */,
 				D3957C7428F571680034283E /* HomeViewController.swift */,
 				D3957C7628F571890034283E /* UpcomingViewController.swift */,
 				D3957C7828F571960034283E /* WatchListViewController.swift */,
@@ -330,7 +327,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F6726528FAD19A00EE1711 /* HomePosterUIView.swift in Sources */,
-				D30B40F729110B1100B02CA7 /* EntryViewController.swift in Sources */,
 				D3957C7128F570A90034283E /* MainTabBarViewController.swift in Sources */,
 				D390E5A62924C81F00C4E71F /* RegisterViewController.swift in Sources */,
 				D3A281A228FC0CDB008E7BEB /* YoutubeSearchResults.swift in Sources */,

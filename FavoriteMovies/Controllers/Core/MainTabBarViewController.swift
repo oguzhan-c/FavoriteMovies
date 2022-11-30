@@ -12,23 +12,15 @@ class MainTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .systemRed
         
-//        configureEntryViews()
-        configureEntry()
+//      test code
+        textView()
+        view.backgroundColor = .systemRed
+//      actual code
+//        configureViews()
+
     }
-    
-    private func configureEntryViews(){
-        if EntryViewController.isAuthenticated == false{
-            configureEntry()
-        }
-        else{
-            configureViews()
-        }
-    }
-    
-    
+      
     private func configureViews(){
         let vcHome = UINavigationController(rootViewController: HomeViewController())
         let vcUpcoming = UINavigationController(rootViewController: UpcomingViewController())
@@ -53,9 +45,8 @@ class MainTabBarViewController: UITabBarController {
         tabBar.tintColor = .label
     }
     
-    private func configureEntry(){
-        let vcEntry = UINavigationController(rootViewController: EntryViewController())
-        
-        setViewControllers([vcEntry] , animated: true)
+    private func textView(){
+        let testvc1 = UINavigationController(rootViewController: LoginViewController())
+        setViewControllers([testvc1], animated: true)
     }
 }

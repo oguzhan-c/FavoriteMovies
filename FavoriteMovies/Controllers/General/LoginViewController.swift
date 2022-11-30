@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Realm
 
 class LoginViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemPink
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordLabel)
@@ -19,14 +21,22 @@ class LoginViewController: UIViewController {
         view.addSubview(loginButton)
         
         configureConstraints()
+        configureBackroundColor()
+    }
+
+    private func configureBackroundColor(){
+        emailLabel.backgroundColor = view.backgroundColor
+        emailTextField.backgroundColor = view.backgroundColor
+        passwordLabel.backgroundColor = view.backgroundColor
+        passwordTextField.backgroundColor = view.backgroundColor
     }
     
     private let emailLabel : UILabel = {
         let label = UILabel()
         label.text = "Email"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .systemPurple
         label.textAlignment = .center
+        label.tintColor = .systemBackground
         label.font = UIFont(name: "Times New Roman", size: 25) //Add Times New Roman font family
         return label
     }()
@@ -35,7 +45,10 @@ class LoginViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "exemple@exemple.com"
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .systemPurple
+        textField.borderStyle = .bezel
+        textField.layer.borderWidth = 5
+        textField.layer.cornerRadius = 20
+        textField.layer.borderColor = CGColor(red: 0.13, green: 0.38, blue: 0.27, alpha: 1)
         textField.font = UIFont(name: "Times New Roman", size: 25) //Add Times New Roman font family
         return textField
     }()
@@ -44,7 +57,6 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "Password"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .systemPurple
         label.textAlignment = .center
         label.font = UIFont(name: "Times New Roman", size: 25) //Add Times New Roman font family
         return label
@@ -54,7 +66,9 @@ class LoginViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "*********"
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .systemPurple
+        textField.borderStyle = .bezel
+        textField.layer.borderWidth = 5
+        textField.layer.cornerRadius = 20
         textField.font = UIFont(name: "Times New Roman", size: 25) //Add Times New Roman font family
         return textField
     }()
@@ -68,7 +82,7 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
         button.titleLabel?.textAlignment = .center
-//      Here we tell button go loginPressed func and work when button pressed.
+        //      Here we tell button go loginPressed func and work when button pressed.
         button.addTarget(self, action: #selector(loginPressed(_ :)), for: .touchUpInside)
         return button
     }()
@@ -76,48 +90,51 @@ class LoginViewController: UIViewController {
     private func configureConstraints(){
         let emailLabelConstraints = [
             emailLabel.topAnchor.constraint(equalTo: view.topAnchor , constant: 50) ,
-            emailLabel.widthAnchor.constraint(equalToConstant: 400) ,
-            emailLabel.heightAnchor.constraint(equalToConstant: 50)
+            emailLabel.widthAnchor.constraint(equalToConstant: 200) ,
+            emailLabel.heightAnchor.constraint(equalToConstant: 50) ,
+            emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         
         let emailTextFieldConstraints = [
             emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor , constant: 18) ,
-            emailTextField.widthAnchor.constraint(equalToConstant: 400) ,
+            emailTextField.widthAnchor.constraint(equalToConstant: 350) ,
             emailTextField.heightAnchor.constraint(equalToConstant: 50) ,
+            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         
         let passwordLabelConstraints = [
             passwordLabel.topAnchor.constraint(equalTo:emailTextField.bottomAnchor , constant: 50) ,
-            passwordLabel.widthAnchor.constraint(equalToConstant: 400) ,
-            passwordLabel.heightAnchor.constraint(equalToConstant: 50)
+            passwordLabel.widthAnchor.constraint(equalToConstant: 200) ,
+            passwordLabel.heightAnchor.constraint(equalToConstant: 50) ,
+            passwordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         
         let passwordTextFieldConstraints = [
             passwordTextField.topAnchor.constraint(equalTo:passwordLabel.bottomAnchor , constant: 18) ,
-            passwordTextField.widthAnchor.constraint(equalToConstant: 400) ,
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50)
+            passwordTextField.widthAnchor.constraint(equalToConstant: 200) ,
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50) ,
+            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         
         let loginButtonConstraints = [
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor , constant: 50) ,
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor ) ,
+            loginButton.centerXAnchor.constraint(equalTo: passwordLabel.centerXAnchor ) ,
             loginButton.widthAnchor.constraint(equalToConstant: 100)
         ]
-
+        
         NSLayoutConstraint.activate(emailLabelConstraints)
         NSLayoutConstraint.activate(emailTextFieldConstraints)
         NSLayoutConstraint.activate(passwordLabelConstraints)
         NSLayoutConstraint.activate(passwordTextFieldConstraints)
         NSLayoutConstraint.activate(loginButtonConstraints)
     }
-
-//    This func working when button pressed
-//    this func is progres now
-    @objc func loginPressed(_ sender: UIButton) {
-                   print("Pressed")
     
-        print(emailTextField.text!)
-        print(passwordTextField.text!)
+    //    This func working when button pressed
+    //    this func is progres now
+    @objc func loginPressed(_ sender: UIButton) {
+            print("login succes")
+        }
+        
     }
     
-}
+
