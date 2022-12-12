@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Realm
 
 class LoginViewController: UIViewController {
     
@@ -47,8 +46,7 @@ class LoginViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .bezel
         textField.layer.borderWidth = 5
-        textField.layer.cornerRadius = 20
-        textField.layer.borderColor = CGColor(red: 0.13, green: 0.38, blue: 0.27, alpha: 1)
+        textField.layer.cornerRadius = 10
         textField.font = UIFont(name: "Times New Roman", size: 25) //Add Times New Roman font family
         return textField
     }()
@@ -68,7 +66,7 @@ class LoginViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .bezel
         textField.layer.borderWidth = 5
-        textField.layer.cornerRadius = 20
+        textField.layer.cornerRadius = 10
         textField.font = UIFont(name: "Times New Roman", size: 25) //Add Times New Roman font family
         return textField
     }()
@@ -83,7 +81,7 @@ class LoginViewController: UIViewController {
         button.layer.masksToBounds = true
         button.titleLabel?.textAlignment = .center
         //      Here we tell button go loginPressed func and work when button pressed.
-        button.addTarget(self, action: #selector(loginPressed(_ :)), for: .touchUpInside)
+        button.addTarget(LoginViewController.self, action: #selector(loginPressed(_ :)), for: .touchUpInside)
         return button
     }()
     

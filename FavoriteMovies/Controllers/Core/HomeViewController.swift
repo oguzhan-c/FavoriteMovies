@@ -43,12 +43,6 @@ class HomeViewController: UIViewController {
         homeTable.tableHeaderView = headerView
     }
     
-    //MARK: -configure Nav bar
-    private func configureNavBar(){
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil)
-    }
-    
-    //MARK: -fetch data from home table
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeTable.frame = view.bounds
@@ -119,8 +113,7 @@ extension HomeViewController : UITableViewDataSource , UITableViewDelegate{
                     print(error.localizedDescription)
                 }
             }
-        default:
-            UITableViewCell()
+        default: break
         }
         
         return cell

@@ -42,13 +42,12 @@ class TitlePreviewViewController: UIViewController {
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "This is the best movie ever to watch as a kid!"
         return label
     }()
         
     private let comment: UITextField = {
         let textField = UITextField()
-        textField.font = .systemFont(ofSize: 18 , weight: .regular)
+        textField.font = .systemFont(ofSize: 18 , weight: .black)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .label
         return textField

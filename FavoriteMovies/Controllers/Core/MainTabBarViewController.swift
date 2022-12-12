@@ -47,6 +47,7 @@ class MainTabBarViewController: UITabBarController {
     
     private func textView(){
         let testvc1 = UINavigationController(rootViewController: LoginViewController())
-        setViewControllers([testvc1], animated: true)
+        let testvc2 = UINavigationController(rootViewController: RegisterViewController())
+        setViewControllers([testvc2], animated: true)
     }
 }
