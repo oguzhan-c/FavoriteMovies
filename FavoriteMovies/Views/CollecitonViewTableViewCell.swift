@@ -77,19 +77,21 @@ extension CollectionViewTableViewCell : UICollectionViewDelegate , UICollectionV
         return titles.count
     }
  
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let item = titles[indexPath.row]
         guard let titleName = item.original_title else{return}
         APIHelper.shared.getYoutubeVideo(with: titleName) { result in
-            switch result {
+            switch result{
             case .success(let video) :
-                let videoModel = TitlePreviewViewModel(title: titleName, youtubeVideo: video, titleOverView: item.overview ?? "Unknown")
+                let videoModel = TitlePreviewViewModel(title: titleName, youtubeVideo: video, titleOverView: item.overview ?? "unknown")
                 self.delegate?.collectionViewTableViewCellDidTapCell(self, viewModel: videoModel)
             case .failure(let error) :
                 print(error.localizedDescription)
             }
+
         }
-        
+
     }
 }

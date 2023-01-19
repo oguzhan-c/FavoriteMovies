@@ -1,0 +1,38 @@
+PODS:
+  - Realm (10.30.0):
+    - Realm/Headers (= 10.30.0)
+  - Realm/Headers (10.30.0)
+  - RealmSwift (10.30.0):
+    - Realm (= 10.30.0)
+  - Runtime (2.2.2)
+  - SDWebImage (5.13.3):
+    - SDWebImage/Core (= 5.13.3)
+  - SDWebImage/Core (5.13.3)
+  - Unrealm (1.9.4):
+    - Realm
+    - RealmSwift
+    - Runtime
+
+DEPENDENCIES:
+  - RealmSwift (~> 10)
+  - SDWebImage (~> 5.13)
+  - Unrealm (~> 1.9)
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - Runtime
+    - SDWebImage
+    - Unrealm
+
+SPEC CHECKSUMS:
+  Realm: 247ccacf72e656c6ee09b242f7d24d5cf99cc058
+  RealmSwift: b3f5c52afa6ac480bd9c3e791c2576f55b3ecb44
+  Runtime: 67741bd196fb4ad821c4d259ccc527bf734d8806
+  SDWebImage: af5bbffef2cde09f148d826f9733dcde1a9414cd
+  Unrealm: 547a3e1432a86df5cff7b74927a60cc664cc2a0d
+
+PODFILE CHECKSUM: 3af39c330f1d98ab2fd2ae8815123849d250c1aa
+
+COCOAPODS: 1.11.3

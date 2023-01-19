@@ -153,8 +153,6 @@ class APIHelper{
                   let results = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)
                   
                   completion(.success(results.items[0]))
-                  
-
               } catch {
                   completion(.failure(error))
                   print(error.localizedDescription)
