@@ -24,9 +24,9 @@
 		D3C20A63290ABAA3001128AC /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C20A62290ABAA3001128AC /* TitlePreviewViewController.swift */; };
 		D3C20A65290ABAD3001128AC /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C20A64290ABAD3001128AC /* SearchResultsViewController.swift */; };
 		D3CA3C7528FF61F20085B68E /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA3C7428FF61F20085B68E /* TitlePreviewViewModel.swift */; };
+		D3CC910829A8ABD60062E2D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC910629A8ABD60062E2D6 /* Constants.swift */; };
+		D3CC910929A8ABD60062E2D6 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC910729A8ABD60062E2D6 /* APIHelper.swift */; };
 		D3EE4B2928FBF321001A3401 /* Tiitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE4B2828FBF321001A3401 /* Tiitles.swift */; };
-		D3EF940028FAE1E400A75FFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF93FF28FAE1E400A75FFB /* Constants.swift */; };
-		D3EF940228FAE2A000A75FFB /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF940128FAE2A000A75FFB /* APIHelper.swift */; };
 		D3F6726328FAC79900EE1711 /* CollecitonViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6726228FAC79900EE1711 /* CollecitonViewTableViewCell.swift */; };
 		D3F6726528FAD19A00EE1711 /* HomePosterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6726428FAD19A00EE1711 /* HomePosterUIView.swift */; };
 /* End PBXBuildFile section */
@@ -53,9 +53,9 @@
 		D3C20A62290ABAA3001128AC /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
 		D3C20A64290ABAD3001128AC /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		D3CA3C7428FF61F20085B68E /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
+		D3CC910629A8ABD60062E2D6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D3CC910729A8ABD60062E2D6 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		D3EE4B2828FBF321001A3401 /* Tiitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiitles.swift; sourceTree = "<group>"; };
-		D3EF93FF28FAE1E400A75FFB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D3EF940128FAE2A000A75FFB /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		D3F6726228FAC79900EE1711 /* CollecitonViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollecitonViewTableViewCell.swift; sourceTree = "<group>"; };
 		D3F6726428FAD19A00EE1711 /* HomePosterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePosterUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +114,7 @@
 				D3EE4B2628FBEDE1001A3401 /* ViewModels */,
 				D3F6726128FAC76800EE1711 /* Views */,
 				D3957C7228F5710A0034283E /* Controllers */,
-				D3EF93FE28FAE1D000A75FFB /* Managers */,
+				D3CC910529A8ABD60062E2D6 /* Managers */,
 				D3EE4B2528FBEDC1001A3401 /* SupportingFiles */,
 				D3957C6528F56FC10034283E /* Assets.xcassets */,
 				D3957C6728F56FC10034283E /* LaunchScreen.storyboard */,
@@ -153,6 +153,15 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		D3CC910529A8ABD60062E2D6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D3CC910629A8ABD60062E2D6 /* Constants.swift */,
+				D3CC910729A8ABD60062E2D6 /* APIHelper.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		D3EE4B2528FBEDC1001A3401 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,15 +187,6 @@
 				D3A281A128FC0CDB008E7BEB /* YoutubeSearchResults.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D3EF93FE28FAE1D000A75FFB /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				D3EF93FF28FAE1E400A75FFB /* Constants.swift */,
-				D3EF940128FAE2A000A75FFB /* APIHelper.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		D3F6726128FAC76800EE1711 /* Views */ = {
@@ -319,20 +319,20 @@
 				D3A281A228FC0CDB008E7BEB /* YoutubeSearchResults.swift in Sources */,
 				D3CA3C7528FF61F20085B68E /* TitlePreviewViewModel.swift in Sources */,
 				D3EE4B2928FBF321001A3401 /* Tiitles.swift in Sources */,
+				D3CC910929A8ABD60062E2D6 /* APIHelper.swift in Sources */,
 				D3957C7B28F571AB0034283E /* SearchViewController.swift in Sources */,
 				D3957C5D28F56FC10034283E /* AppDelegate.swift in Sources */,
 				D3957C5F28F56FC10034283E /* SceneDelegate.swift in Sources */,
 				D3C20A5E290AB9E1001128AC /* TitleTableViewCell.swift in Sources */,
 				D3C20A60290ABA1E001128AC /* TitleViewModel.swift in Sources */,
 				D39F2C0C28FF5CF5008F050B /* TitleCollectionViewCell.swift in Sources */,
-				D3EF940028FAE1E400A75FFB /* Constants.swift in Sources */,
 				D3957C7728F571890034283E /* UpcomingViewController.swift in Sources */,
 				D3957C7928F571960034283E /* WatchListViewController.swift in Sources */,
 				D3C20A63290ABAA3001128AC /* TitlePreviewViewController.swift in Sources */,
 				D3957C7528F571680034283E /* HomeViewController.swift in Sources */,
-				D3EF940228FAE2A000A75FFB /* APIHelper.swift in Sources */,
 				D3C20A65290ABAD3001128AC /* SearchResultsViewController.swift in Sources */,
 				D3F6726328FAC79900EE1711 /* CollecitonViewTableViewCell.swift in Sources */,
+				D3CC910829A8ABD60062E2D6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
