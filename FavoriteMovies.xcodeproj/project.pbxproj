@@ -112,7 +112,6 @@
 		D3957C5B28F56FC10034283E /* FavoriteMovies */ = {
 			isa = PBXGroup;
 			children = (
-				D3CC910A29A8AC370062E2D6 /* ReadmeFiles */,
 				D3EE4B2728FBEDF4001A3401 /* Models */,
 				D3EE4B2628FBEDE1001A3401 /* ViewModels */,
 				D3F6726128FAC76800EE1711 /* Views */,
@@ -176,6 +175,7 @@
 		D3EE4B2528FBEDC1001A3401 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				D3CC910A29A8AC370062E2D6 /* ReadmeFiles */,
 				D3957C5C28F56FC10034283E /* AppDelegate.swift */,
 				D3957C5E28F56FC10034283E /* SceneDelegate.swift */,
 			);
